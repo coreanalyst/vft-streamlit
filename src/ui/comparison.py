@@ -64,7 +64,7 @@ def render_comparison_ui(model):
         title=f"Comparison by {score_type}"
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     # Side-by-Side Table
     st.subheader("Detailed Comparison Table")
@@ -97,4 +97,4 @@ def render_comparison_ui(model):
 
     comp_data.append(total_row)
 
-    st.dataframe(pd.DataFrame(comp_data), hide_index=True, use_container_width=True)
+    st.dataframe(pd.DataFrame(comp_data), hide_index=True, width='stretch')

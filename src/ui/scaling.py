@@ -108,4 +108,4 @@ def render_scaling_ui(model):
                 yaxis_range=[-0.1, 1.1]
             )
 
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')

@@ -52,7 +52,7 @@ def render_analysis_ui(model):
             column_order=column_order,
             column_config=column_config,
             hide_index=True,
-            use_container_width=True
+            width='stretch'
         )
 
         # Update Scores
@@ -86,7 +86,7 @@ def render_analysis_ui(model):
             rank_df["Rank"] = rank_df.index + 1
             rank_df = rank_df[["Rank", "Alternative", "Total Score"]]
 
-            st.dataframe(rank_df, hide_index=True, use_container_width=True)
+            st.dataframe(rank_df, hide_index=True, width='stretch')
 
             # Stacked Bar Chart (Contribution)
             st.markdown("### Contribution Analysis")
@@ -116,7 +116,7 @@ def render_analysis_ui(model):
                     title="Score Contribution by Attribute",
                     text_auto='.2f'
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width='stretch')
 
             # Detailed Table
             with st.expander("Detailed Results Table"):

@@ -51,7 +51,7 @@ def render_weighting_ui(model):
 
         if not data.empty:
             fig = px.pie(data, values="Weight", names="Attribute", title="Attribute Weights")
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
 
     st.subheader("Attribute Ranking")
 
@@ -93,6 +93,6 @@ def render_weighting_ui(model):
 
     st.dataframe(
         rank_df.style.map(highlight_bin, subset=["Importance Bin"]),
-        use_container_width=True,
+        width='stretch',
         hide_index=True
     )
